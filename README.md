@@ -7,7 +7,7 @@
 
 
 ### PC前端功能展示：  
-![PC前端功能展示：](http://ofyxyx8o9.bkt.clouddn.com/fronted.gif)  
+[PC前端功能展示：](http://ofyxyx8o9.bkt.clouddn.com/fronted.gif)  
 
 
 
