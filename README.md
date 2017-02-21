@@ -1,20 +1,19 @@
-> 一个前端基于Vue2.0全家桶，后端基于Express+Mongodb的前后端分离博客。前端界面使用了flexbox+rem布局，后端界面使用了element ui。本项目可以作为一个前端进阶项目，从前端flexbox布局到前端框架的使用，再到后端以及数据库，是一个打通前后端流程的一个项目。由于最近刚换了域名，正在备案中，所以目前没有线上演示，不过可以看一下下面的动态图特效。
+> 一个前端基于Vue2.0全家桶，后端基于Express+Mongodb的前后端分离博客。前端界面使用了flexbox+rem布局，后端界面使用了element ui。本项目可以作为一个前端进阶项目，从前端flexbox布局到前端框架的使用，再到后端以及数据库，是一个打通前后端流程的一个项目。由于最近刚换了域名，正在备案中，所以目前没有线上演示，不过可以看一下下面的动态图特效。  
+
 #  特点
 * 支持 MarkDown 编辑
 * 支持代码高亮
 * 支持移动端浏览
-# 前端展示
+# 功能展示展示
+#### 前台博客展示
+
+![](http://ofyxyx8o9.bkt.clouddn.com/fronted.gif)
 
 
-### PC前端功能展示：  
-![](assets/img/fronted.gif)  
+#### 后台管理展示
+![](src/assets/img/backend.gif)
 
-### 移动端功能展示
-![](http://ofyxyx8o9.bkt.clouddn.com/mobile.gif)
-
-### pc后端功能展示  
-![](assets/img/backend.gif)
-# 若图片无法显示则点击这里:[pc前端功能展示](http://ofyxyx8o9.bkt.clouddn.com/fronted.gif) [移动前端功能展示](http://ofyxyx8o9.bkt.clouddn.com/mobile.gif)[pc后端功能展示](http://ofyxyx8o9.bkt.clouddn.com/backend.gif)
+#### 若图片无法显示则点击这里:[pc前端功能展示](http://ofyxyx8o9.bkt.clouddn.com/fronted.gif) [移动前端功能展示](http://ofyxyx8o9.bkt.clouddn.com/mobile.gif)[pc后端功能展示](http://ofyxyx8o9.bkt.clouddn.com/backend.gif)
 
 ### 前端工具
 * Vue2.0
@@ -30,12 +29,18 @@
 1. [移动端调试](https://segmentfault.com/a/1190000002565572)
 2. [介绍vieport](http://www.css88.com/archives/6410)
 4. [使用Flexible实现手淘H5页面的终端适配](https://github.com/amfe/article/issues/17)
-### 后端
+
+
+
+### 后端工具
 * express
 * mongodb（mongolass）
 
 后端的管理界面我直接使用了[element ui](http://element.eleme.io/#/)这个基于vue的组件库，很强大.
+
+
 # 目录结构
+
 ```
 │  .babelrc
 │  .editorconfig
@@ -138,7 +143,9 @@
 │      │  MsgAlert.js
 │      │  mutations.js
 │      │  states.js
-│      │  types.js ```  
+│      │  types.js
+```  
+
 ## Step
 #### 环境
 * Node.js v6
@@ -169,6 +176,7 @@
         }
       }
     },`
+
 * 推荐[Robomongo](https://robomongo.org/)作为数据库的可视化管理工具
 * 推荐Postman作为验证restful API的工具，请参考[这篇文章](http://www.cnblogs.com/mafly/p/postman.html)
 * 这里的主页界面有个小小的bug,主页只显示每篇具体文章的摘要，在这里我取了一个巧，就是将从后端返回的数据经过markdown解析以后，用了一个正则把第一个p标签以及其中的内容给提取出来渲染到页面。因此后端在添加文章的时候必须在编写每篇文章的开头写一段话。因为毕竟这个博客只是一个第一版，后面我会把这个问题解决掉。
