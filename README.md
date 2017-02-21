@@ -4,19 +4,18 @@
 * 支持代码高亮
 * 支持移动端浏览
 # 前端展示
-* PC前端功能展示：  
 
+
+### PC前端功能展示：  
 ![](http://ofyxyx8o9.bkt.clouddn.com/fronted.gif)  
 
-
-
-
-* 移动端功能展示
-
+### 移动端功能展示
 ![](http://ofyxyx8o9.bkt.clouddn.com/mobile.gif)
 
-* pc后端功能展示  
+### pc后端功能展示  
 ![](http://ofyxyx8o9.bkt.clouddn.com/backend.gif)
+
+
 ### 前端工具
 * Vue2.0
 * Vue-Router
