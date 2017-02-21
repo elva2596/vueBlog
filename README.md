@@ -7,9 +7,14 @@
 
 
 ### PC前端功能展示：  
-[PC前端功能展示：](http://ofyxyx8o9.bkt.clouddn.com/fronted.gif)  
+![](assets/img/fronted.gif)  
 
+### 移动端功能展示
+![](http://ofyxyx8o9.bkt.clouddn.com/mobile.gif)
 
+### pc后端功能展示  
+![](assets/img/backend.gif)
+# 若图片无法显示则点击这里:[pc前端功能展示](http://ofyxyx8o9.bkt.clouddn.com/fronted.gif) [移动前端功能展示](http://ofyxyx8o9.bkt.clouddn.com/mobile.gif)[pc后端功能展示](http://ofyxyx8o9.bkt.clouddn.com/backend.gif)
 
 ### 前端工具
 * Vue2.0
