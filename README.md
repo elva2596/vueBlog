@@ -1,8 +1,22 @@
-> 一个前端基于Vue2.0全家桶，后端基于Express+Mongodb的前后端分离博客。前端界面使用了flexbox+rem布局，后端界面使用了element ui。本项目可以作为一个前端进阶项目，从前端flexbox布局到前端框架的使用，再到后端以及数据库，是一个打通前后端流程的一个项目。由于最近刚换了域名，正在备案中，所以目前没有线上演示，不过可以看一下下面的动态图特效。如果大家觉得这个做的不错，我还可以写一个关于这个项目的教程
+> 一个前端基于Vue2.0全家桶，后端基于Express+Mongodb的前后端分离博客。前端界面使用了flexbox+rem布局，后端界面使用了element ui。本项目可以作为一个前端进阶项目，从前端flexbox布局到前端框架的使用，再到后端以及数据库，是一个打通前后端流程的一个项目。由于最近刚换了域名，正在备案中，所以目前没有线上演示，不过可以看一下下面的动态图特效。
 #  特点
 * 支持 MarkDown 编辑
 * 支持代码高亮
-* 支持移动端浏览  
+* 支持移动端浏览
+# 前端展示
+* PC前端功能展示：  
+
+![](http://ofyxyx8o9.bkt.clouddn.com/fronted.gif)  
+
+
+
+
+* 移动端功能展示
+
+![](http://ofyxyx8o9.bkt.clouddn.com/mobile.gif)
+
+* pc后端功能展示  
+![](http://ofyxyx8o9.bkt.clouddn.com/backend.gif)
 ### 前端工具
 * Vue2.0
 * Vue-Router
@@ -11,6 +25,12 @@
 * element ui  
 
 前端布局采用flexbox+rem布局，关于flexbox请阅读[一个完整的Flexbox指南](http://www.w3cplus.com/css3/a-guide-to-flexbox-new.html)以及这篇最新的[理解Flexbox：你需要知道的一切](http://www.w3cplus.com/css3/understanding-flexbox-everything-you-need-to-know.html)
+
+本项目还采用了手机端适配，关于移动端的学习资料请按照我下面罗列的资料按顺序仔细阅读。
+
+1. [移动端调试](https://segmentfault.com/a/1190000002565572)
+2. [介绍vieport](http://www.css88.com/archives/6410)
+4. [使用Flexible实现手淘H5页面的终端适配](https://github.com/amfe/article/issues/17)
 ### 后端
 * express
 * mongodb（mongolass）
@@ -150,6 +170,7 @@
     },`
 * 推荐[Robomongo](https://robomongo.org/)作为数据库的可视化管理工具
 * 推荐Postman作为验证restful API的工具，请参考[这篇文章](http://www.cnblogs.com/mafly/p/postman.html)
+* 这里的主页界面有个小小的bug,主页只显示每篇具体文章的摘要，在这里我取了一个巧，就是将从后端返回的数据经过markdown解析以后，用了一个正则把第一个p标签以及其中的内容给提取出来渲染到页面。因此后端在添加文章的时候必须在编写每篇文章的开头写一段话。因为毕竟这个博客只是一个第一版，后面我会把这个问题解决掉。
 # Todo
 * 移动端优化，300ms
 * 添加评论功能
