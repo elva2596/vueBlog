@@ -9,11 +9,6 @@
 ### PC前端功能展示：  
 ![](http://ofyxyx8o9.bkt.clouddn.com/fronted.gif)  
 
-### 移动端功能展示
-![](http://ofyxyx8o9.bkt.clouddn.com/mobile.gif)
-
-### pc后端功能展示  
-![](http://ofyxyx8o9.bkt.clouddn.com/backend.gif)
 
 
 ### 前端工具
