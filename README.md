@@ -5,12 +5,15 @@
 * 支持代码高亮
 * 支持移动端浏览
 # 功能展示展示
-#### 前台博客展示
+#### PC前台博客演示
 
-![](http://ofyxyx8o9.bkt.clouddn.com/fronted.gif)
+![](src/assets/img/backend.gif)
 
 
-#### 后台管理展示
+#### 移动端前台演示
+![](src/assets/img/mobile.gif)
+
+#### 后台管理演示
 ![](src/assets/img/backend.gif)
 
 #### 若图片无法显示则点击这里:[pc前端功能展示](http://ofyxyx8o9.bkt.clouddn.com/fronted.gif) [移动前端功能展示](http://ofyxyx8o9.bkt.clouddn.com/mobile.gif)[pc后端功能展示](http://ofyxyx8o9.bkt.clouddn.com/backend.gif)
