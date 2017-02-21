@@ -4,10 +4,14 @@
 * 支持 MarkDown 编辑
 * 支持代码高亮
 * 支持移动端浏览
+
+
 # 功能展示展示
+
+
 #### PC前台博客演示
 
-![](src/assets/img/backend.gif)
+![](src/assets/img/fronted.gif)
 
 
 #### 移动端前台演示
@@ -155,18 +159,32 @@
 * mongoDB [下载地址](https://www.mongodb.com/download-center?jmp=nav#community)[安装方法]（https://docs.mongodb.com/manual/installation/）
 安装完成后启动数据库  
 `mongod`  
+
+
 #### 克隆远程库
 `git clone https://github.com/elva2596/vueBlog.git`
+
+
 #### 安装前后端依赖
 `npm install`
+
+
 #### 全局安装supervisor
 `npm install -g supevsior`
+
+
 #### 启动后端服务器
 `进入到server文件夹下：supervisor app`
+
+
 #### 启动前端项目
 `回到项目根目录下运行：npm run dev`
+
+
 #### 生成发布
 `npm run build`
+
+
 #### Notice
 * 前后端启动时的路径不一样，前端在项目根目录，后端在servser根目录，其实可以把后端分离出来。
 * 因为是前后端分离项目，必然涉及到跨域，使用webpack的proxyTable,进入到config文件夹的index.js,将proxyTable配置成：
@@ -180,13 +198,19 @@
       }
     },`
 
+
+
 * 推荐[Robomongo](https://robomongo.org/)作为数据库的可视化管理工具
 * 推荐Postman作为验证restful API的工具，请参考[这篇文章](http://www.cnblogs.com/mafly/p/postman.html)
 * 这里的主页界面有个小小的bug,主页只显示每篇具体文章的摘要，在这里我取了一个巧，就是将从后端返回的数据经过markdown解析以后，用了一个正则把第一个p标签以及其中的内容给提取出来渲染到页面。因此后端在添加文章的时候必须在编写每篇文章的开头写一段话。因为毕竟这个博客只是一个第一版，后面我会把这个问题解决掉。
+
+
 # Todo
 * 移动端优化，300ms
 * 添加评论功能
 * 密码修改功能
 * 用户权限分类
+
+
 ## License
 MIT
