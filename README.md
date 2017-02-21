@@ -155,6 +155,8 @@
 `进入到server文件夹下：supervisor app`
 #### 启动前端项目
 `回到项目根目录下运行：npm run dev`
+#### 生成发布
+`npm run build`
 #### Notice
 * 前后端启动时的路径不一样，前端在项目根目录，后端在servser根目录，其实可以把后端分离出来。
 * 因为是前后端分离项目，必然涉及到跨域，使用webpack的proxyTable,进入到config文件夹的index.js,将proxyTable配置成：
