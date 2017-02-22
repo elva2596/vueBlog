@@ -171,7 +171,7 @@
 
 
 #### 全局安装supervisor
-`npm install -g supevsior`
+`npm install -g supervsior`
 
 
 #### 启动后端服务器
