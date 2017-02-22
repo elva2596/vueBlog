@@ -174,6 +174,12 @@
 `npm install -g supervsior`
 
 
+#### 启动mongodb服务器
+
+在你安装的数据库文件中的bin目录中启动
+
+`mongod`
+
 #### 启动后端服务器
 `进入到server文件夹下：supervisor app`
 
