@@ -156,7 +156,8 @@
 ## Step
 #### 环境
 * Node.js v6
-* mongoDB [下载地址](https://www.mongodb.com/download-center?jmp=nav#community)[安装方法]（https://docs.mongodb.com/manual/installation/）
+* mongoDB [下载地址](https://www.mongodb.com/download-center?jmp=nav#community)
+[安装方法](https://docs.mongodb.com/manual/installation/)
 安装完成后启动数据库  
 `mongod`  
 

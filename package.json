@@ -17,6 +17,7 @@
     "body-parser": "^1.16.0",
     "dotenv": "^2.0.0",
     "element-ui": "^1.1.6",
+    "express": "^4.14.1",
     "express-jwt": "^5.1.0",
     "highlight.js": "^9.9.0",
     "jsonwebtoken": "^7.2.1",
