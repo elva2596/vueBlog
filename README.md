@@ -171,7 +171,7 @@
 
 
 #### 全局安装supervisor
-`npm install -g supervsior`
+`npm install -g supervisor`
 
 
 #### 启动mongodb服务器
