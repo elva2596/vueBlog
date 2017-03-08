@@ -25,10 +25,6 @@ a{
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 /*登录注册通用样式*/
-h2{
-  margin: 0;
-}
-
 .container{
   margin:0;
   background:url('../img/bg.jpg') no-repeat center;
@@ -60,13 +56,65 @@ h2{
 .reg_button,.login_button{
   margin-top: 20px;
 }
-pre code{
-  color:#8492A6;
-    display: block;
-    /*overflow-x: auto;*/
-    background: #23241f;
-    font: 16px Consolas, "Liberation Mono", Menlo, Courier, monospace;
-
+pre{
+   white-space: pre-wrap;
 }
-
-/*vue过渡*/
+code{
+  color:#657b83;
+  background: #f6f6f6;
+  font: 16px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  /*font-size: 12px;*/
+  padding: .2rem .4rem;
+   max-width: 100%;
+  white-space: pre-wrap;
+}
+.article pre code{
+  color:#8492A6;
+  display: block;
+  background: #23241f;
+  font: 16px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  border-radius: 5px;
+   max-width: 100%;
+   line-height: 1.5em;
+   padding: .4rem .6rem;
+   overflow-x: auto;
+}
+.article img,.showArtilce img{
+  max-width: 100%;
+  display: block;
+}
+.article a{
+   color: #3194d0;
+}
+.article a:hover {
+    text-decoration: underline;
+}
+.article ul {
+    padding-left: 2.2rem;
+  }
+.article h1{
+  font-size: 2.6rem;
+}
+.article h2{
+  font-size: 24px;
+}
+.article h3{
+  font-size: 22px;
+}
+.article h4{
+  font-size: 20px;
+}
+.article h5{
+  font-size: 18px;
+}
+.article h6{
+  font-size:16px;
+}
+.article p{
+  margin-bottom: 2.5rem;
+}
+@media screen and (max-width:768px){
+.article pre code{
+  font-size: 14px;
+}
+}

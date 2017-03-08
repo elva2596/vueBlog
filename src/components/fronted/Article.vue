@@ -1,5 +1,5 @@
 <template lang="html">
-  <article v-loading="loading2"  element-loading-text="加载中" class="article_wrap">
+  <article v-loading="loading2"  element-loading-text="加载中" class="article_wrap article">
     <header>
       <div class="home_title">{{oneArticle.title}}</div>
     <div>
@@ -41,9 +41,7 @@ article{
   margin:auto;
   /*margin-bottom:1rem;*/
 }
-h1,h2,h3,h4{
-  margin:0;
-}
+
 .home_title{
   font-size: 3rem;
   font-weight: 400;
@@ -59,7 +57,7 @@ h1,h2,h3,h4{
 }
 .home_main{
   font-size: 1.6rem;
-  color:#34495e;
+  /*color:#34495e;*/
   line-height: 1.6em;
   padding:1rem 0;
 }

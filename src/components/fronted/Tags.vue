@@ -94,7 +94,7 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
 .list-enter-active,.list-leave-active{
   transition: all .3s
 }

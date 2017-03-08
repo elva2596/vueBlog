@@ -25,7 +25,7 @@
           </el-col>
           <el-col :span='12'>
             <!-- 展示区 -->
-            <div style="background:#fff;margin:0 0 0 20px;height:526px;overflow-y:auto;" v-html="markedToHtml"></div>
+            <div style="background:#fff;margin:0 0 0 20px;height:526px;overflow-y:auto;" v-html="markedToHtml" class="article"></div>
           </el-col>
         </el-row>
         <el-form-item style="padding:20px 20px 0 0 " >
@@ -168,19 +168,8 @@ export default {
 }
 </script>
 
-<style lang="css">
-code {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  background: #23241f;
-    inline-height:1.5em;
-}
-code span{
-  /*display: inline-block;*/
-  margin:4px 2px
-}
-p{
-  margin:0;
+<style lang="css" scoped>
+.article{
+  background: red;
 }
 </style>
