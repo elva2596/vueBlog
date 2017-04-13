@@ -42,7 +42,7 @@ import api from '../../api/index'
 import marked from 'marked';
 import hlj from 'highlight.js'
 import  'highlight.js/styles/atom-one-dark.css'
-import NProgress from 'NProgress'
+import NProgress from 'nprogress'
 export default {
   data(){
     return {
