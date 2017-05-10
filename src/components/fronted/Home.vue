@@ -8,7 +8,7 @@
             </router-link>
           </div>
           <div>
-            <p class="home_creatAt">{{item.created_at}}</p>
+            <p class="home_creatAt" >{{item.created_at}}</p>
           </div>
         </header>
         <section v-html="item.contentToMark" class="home_main"></section>
@@ -25,6 +25,7 @@ import vhead from './vheader'
 import api from '../../api'
 import vfoot from './vfooter'
 export default {
+  name:"Home",
   data(){
     return {
       items:[
@@ -34,7 +35,7 @@ export default {
       loadMoreText:'加载更多',
       loadMoreShow:false,
       page:1,
-      limit:6
+      limit:10
     }
   },
   components:{
@@ -49,32 +50,29 @@ export default {
         this.loadData(this.page,this.limit)
       },
       loadData(page,limit){
-      return  api.getArticleLists({page,limit})
-              .then(({data:{code,articleLists,hasNext,hasPrev}})=>{
-                articleLists.forEach((item,index,arr)=>{
-                  item.contentToMark = item.contentToMark.match(/<p>([\s\S]*?)<\/p>/g)[0];
-                })
-                if(code==200){
-                  setTimeout(()=>{
-                    this.items = this.items.concat(articleLists)
-                    this.loading2=false;
-                    if(hasNext){
-                      this.loadMoreShow = true
-                      this.loadMoreFlag =  false
-                      this.loadMoreText = '加载更多'
-                    }else{
-                      this.loadMoreShow = false
-                    }
-                  },200)
-                }
+          api.getArticleLists({page,limit})
+                .then(({data:{code,articleLists,hasNext,hasPrev}})=>{
+                  if(code==200){
+                    setTimeout(()=>{
+                      this.items = this.items.concat(articleLists)
+                      this.loading2=false;
+                      if(hasNext){
+                        this.loadMoreShow = true
+                        this.loadMoreFlag =  false
+                        this.loadMoreText = '加载更多'
+                      }else{
+                        this.loadMoreShow = false
+                      }
+                    },200)
+                  }
 
-              })
-      }
+                })
+        }
   },
   mounted(){
     // 封装成一个方法，与分页获取文章列表类似
     this.$store.dispatch('changeHeadLine','主页')
-    this.loadData(1,10)
+    this.loadData(1,this.limit)
   }
 }
 </script>
@@ -101,15 +99,16 @@ h2,h4{
 }
 .home_creatAt{
   font-family: "Comic Sans MS", curslve, sans-serif;
-  padding:0.6rem 0;
   font-size: 1.6rem;
   color:#7f8c8d;
+  margin: 0;
 }
+
 .home_main{
   font-size: 1.6rem;
   color:#34495e;
   line-height: 1.6em;
-  padding:0.6rem 0;
+  /*padding:0.6rem 0;*/
 }
 footer{
   text-align: right;
@@ -142,10 +141,11 @@ opacity: 0.6;
 }
 @media screen and (max-width:786px){
   .home_title{
-    font-size: 2.2rem;
+    font-size: 1.8rem;
+    line-height: 1.5em;
   }
   .home_creatAt{
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
   .loadMore{
     margin: 3rem 0  .8rem 0;

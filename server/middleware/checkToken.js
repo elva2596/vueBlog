@@ -1,4 +1,4 @@
-// ????验证token中间件
+// 验证token中间件
 var jwt = require('jsonwebtoken')
 module.exports = function (req, res, next) {
   if(req.headers['authorization']){

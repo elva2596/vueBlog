@@ -54,12 +54,12 @@ article{
   padding:0.6rem 0;
   font-size: 1.8rem;
   color:#7f8c8d;
+  /*background: red;*/
+  margin:0;
 }
 .home_main{
   font-size: 1.6rem;
-  /*color:#34495e;*/
   line-height: 1.6em;
-  padding:1rem 0;
 }
 
 @media screen and (max-width:786px){

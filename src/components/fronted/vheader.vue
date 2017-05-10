@@ -62,7 +62,7 @@ export default {
     background:  url('../../assets/img/bgm.jpg') no-repeat center /cover;
     /* brightness()给图片应用一种线性乘法，使其看起来更亮或更暗。如果值是0%，图像会全黑。值是100%，
     则图像无变化。其他的值对应线性乘数效果。值超过100%也是可以的，图像会比原来更亮。如果没有设定值，默认是1。*/
-    filter: brightness(0.7)
+    filter: brightness(0.7);
   }
   nav ul{
     display: flex;

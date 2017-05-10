@@ -6,6 +6,7 @@
       </li>
     </ul>
     <transition-group name="list" tag="div" >
+      
       <article v-for='item in articleLists' v-if='show' :key="item._id" >
         <header>
           <div>
@@ -22,6 +23,7 @@
           <router-link class="tags_readMore" :to="{path:`/article/${item._id}`}">阅读全文>></router-link>
       </footer>
     </article>
+    
     </transition-group>
   </div>
 </template>
@@ -30,11 +32,12 @@
 import api from '../../api'
 import vfoot from './vfooter'
 export default {
+  name:"Tag",
   data(){
     return {
       items:[],
       articleLists:[],
-      selected:6,
+      selected:9,
       show:true,
       loading2:true,
       list_show:true
@@ -53,10 +56,7 @@ export default {
     getPage(classify){
       api.getArticlesByClassify({classify})
           .then(({data:{code,articleLists}})=>{
-            articleLists.forEach((item,index,arr)=>{
-              // 正则？？？？？？？？
-              item.contentToMark = item.contentToMark.match(/<p>([\s\S]*?)<\/p>/g)[0];
-            })
+           
             if(code==200){
                 this.articleLists = articleLists
                 setTimeout(()=>{
@@ -79,7 +79,7 @@ export default {
           setTimeout(()=>{
             this.loading2=false;
             this.items = lists
-            this.getPage('Html5')
+            this.getPage('Vue')
           },200)
         }
 
@@ -103,6 +103,9 @@ export default {
 }
 
 h2,h4{
+  margin:0;
+}
+p,.tags_main p{
   margin:0;
 }
 .tags_list{

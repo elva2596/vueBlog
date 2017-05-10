@@ -29,6 +29,11 @@ router.post('/article/lists',checkToken,function (req,res,next){
       .then((result)=>{
         var articleLists = result[0],
             total = result[1];
+         articleLists.forEach((article=>{
+            // delete article._id
+            delete article.content
+            delete article.contentToMark
+       }))
         res.send({
           code:200,
           articleLists,
@@ -48,6 +53,11 @@ router.post('/article/noAuthArtilcelists',function (req,res,next){
   let {classify}  =req.body
   api.getArticlesByClassify(classify)
       .then((articleLists)=>{
+        articleLists.forEach((article=>{
+            delete article.content
+            // delete article.title
+            article.contentToMark = article.contentToMark.match(/<p>([\s\S]*?)<\/p>/g)[0]
+       }))
         res.send({
           code:200,
           articleLists
@@ -70,6 +80,11 @@ router.post('/article/articleLists',function (req,res,next){
             totalPage =Math.ceil(total/limit),
             hasNext=totalPage>page?1:0,
             hasPrev=page>1
+       articleLists.forEach((article=>{
+            delete article.content
+            article.contentToMark = article.contentToMark.match(/<p>([\s\S]*?)<\/p>/g)[0]
+       }))
+      
         res.send({
           code:200,
           articleLists,

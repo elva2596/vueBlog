@@ -1,9 +1,15 @@
 var Mongolass = require('mongolass');
 var mongolass = new Mongolass();
 mongolass.connect('mongodb://localhost:27017/mywebsite');
-var moment = require('moment');
-var objectIdToTimestamp = require('objectid-to-timestamp');
-// 根据_id生成时间戳
+var moment = require('moment');//时间格式化(前后台都可以用的npm包)
+var objectIdToTimestamp = require('objectid-to-timestamp');// 根据_id生成时间戳
+/*
+    mongolass插件系统，语法:
+    mongolass.plugin(插件名字,{
+    before(方法)
+    after(方法)
+  })
+*/
 mongolass.plugin('addCreateAt',{
   // 只要查询所有条件，那么一定会有最终结果
   afterFind:function (results){

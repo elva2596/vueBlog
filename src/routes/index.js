@@ -19,7 +19,6 @@ const router =  new VueRouter({
 })
 // 路由钩子
 router.beforeEach(({meta,path},from,next)=>{
-  console.log('1start');
   store.dispatch('showProgress',0)
   // NProgress.start();
   let {auth=true}=meta

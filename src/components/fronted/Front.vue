@@ -1,7 +1,9 @@
 <template lang="html">
     <div class="wrapper">
       <vhead class="head"></vhead>
-        <router-view class="content"></router-view>
+        <!--<keep-alive>     -->
+          <router-view class="content"></router-view>
+        <!--</keep-alive>-->
       <vfoot class="foot"></vfoot>
     </div>
 </template>

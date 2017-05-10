@@ -57,16 +57,22 @@ a{
   margin-top: 20px;
 }
 pre{
-   white-space: pre-wrap;
+   /*white-space: pre-wrap;*/
 }
 code{
   color:#657b83;
   background: #f6f6f6;
   font: 16px Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  /*font-size: 12px;*/
   padding: .2rem .4rem;
    max-width: 100%;
-  white-space: pre-wrap;
+   border-radius: 5px;
+}
+li code,
+p code{
+  word-wrap: break-word;
+  /* line-height:  */
+  border-radius: 5px;
+  font-size: 14px;
 }
 .article pre code{
   color:#8492A6;
@@ -93,7 +99,7 @@ code{
     padding-left: 2.2rem;
   }
 .article h1{
-  font-size: 2.6rem;
+  font-size: 26px;
 }
 .article h2{
   font-size: 24px;
@@ -113,8 +119,40 @@ code{
 .article p{
   margin-bottom: 2.5rem;
 }
-@media screen and (max-width:768px){
-.article pre code{
-  font-size: 14px;
+.tags_main p{
+  margin:0;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  line-height: 1.4em;
+}
+@media screen and (max-width:768px){
+  .article pre code{
+    font-size: 14px;
+  }
+  .article h1{
+    font-size: 24px;
+  }
+  .article h2{
+    font-size: 22px;
+  }
+  .article h3{
+    font-size: 20px;
+  }
+  .article h4{
+    font-size: 18px;
+  }
+  .article h5{
+    font-size: 16px;
+  }
+  .article h6{
+    font-size:14px;
+  }
+  p code{
+    font-size: 12px;
+  }
 }

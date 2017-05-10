@@ -10,7 +10,7 @@
      </el-form-item>
       <el-form-item style="width:100%;">
         <el-button class="login_button" type="primary" style="width:40%;" @click="handleSubmit">登录</el-button>
-        <el-button class="login_button" type="primary" style="width:40%;" @click="toReg">注册</el-button>
+         <el-button class="login_button" type="primary" style="width:40%;" @click="toReg">注册</el-button>
       </el-form-item>
   </el-form>
 </div>
@@ -55,9 +55,9 @@ export default {
         changeFlag(){
           this.errorMessage = false
         },
-        toReg(){
-          this.$router.push({path:'/reg'})
-        }
+         toReg(){
+           this.$router.push({path:'/reg'})
+         }
       }
     }
 </script>

@@ -70,16 +70,18 @@ export default {
       },
       getLists(){
         this.listLoading = true
-        NProgress.start()
+//        NProgress.start()
         api.getArticleList({
           page:this.page,
           limit:this.limit
         })
         .then(({data:{articleLists,total}})=>{
+          console.log(articleLists);
             setTimeout(()=>{
               this.listLoading =false
-              NProgress.done()
+//              NProgress.done()
               this.articleLists =articleLists;
+
               this.total =total;
             },500)
         })

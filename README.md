@@ -166,7 +166,7 @@
 `git clone https://github.com/elva2596/vueBlog.git`
 
 
-#### 安装前后端依赖
+#### 安装前端依赖
 `npm install`
 
 
@@ -180,8 +180,11 @@
 
 `mongod`
 
+#### 安装后端依赖
+`进入到server文件夹下，安装后端依赖：npm install`
+
 #### 启动后端服务器
-`进入到server文件夹下：supervisor app`
+`npm start`
 
 
 #### 启动前端项目

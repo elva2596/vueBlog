@@ -19,6 +19,7 @@ export default [
     meta:{auth:false},
     hidden:true
   },
+  
   {
     path:'/',
     component:Front,//这是文章页

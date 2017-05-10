@@ -168,8 +168,7 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
-.article{
-  background: red;
-}
+
+<style scoped>
+  
 </style>
