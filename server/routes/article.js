@@ -23,7 +23,7 @@ router.post('/article/create',checkToken,function (req,res,next){
       })
 })
 // 获取所有文章(带分页获取,需要验证权限)
-router.post('/article/lists',checkToken,function (req,res,next){
+router.get('/article/lists',checkToken,function (req,res,next){
   let {page,limit}  =req.body
   api.getAllArticles(page,limit)
       .then((result)=>{
@@ -48,7 +48,7 @@ router.post('/article/lists',checkToken,function (req,res,next){
       })
 })
 // 根据classify获取文章列表(前台使用没有权限)
-router.post('/article/noAuthArtilcelists',function (req,res,next){
+router.get('/article/noAuthArtilcelists',function (req,res,next){
 
   let {classify}  =req.body
   api.getArticlesByClassify(classify)
@@ -71,7 +71,7 @@ router.post('/article/noAuthArtilcelists',function (req,res,next){
       })
 })
 // 获取所有文章(每次返回10个)前台使用
-router.post('/article/articleLists',function (req,res,next){
+router.get('/article/articleLists',function (req,res,next){
   let {page,limit}  =req.body
   api.getAllArticles(page,limit)
       .then((result)=>{
@@ -100,7 +100,7 @@ router.post('/article/articleLists',function (req,res,next){
       })
 })
 // 根据postId获取其中一篇文章（有权限）
-router.post('/article/onePage',checkToken,function (req,res,next){
+router.get('/article/onePage',checkToken,function (req,res,next){
   let {id}  =req.body
   api.getOneArticle(id)
       .then((oneArticle)=>{
@@ -121,7 +121,7 @@ router.post('/article/onePage',checkToken,function (req,res,next){
       })
 }),
 // 根据postId获取其中一篇文章（没有权限）
-router.post('/article/noAuth',function (req,res,next){
+router.get('/article/noAuth',function (req,res,next){
   let {id}  =req.body
   api.getOneArticle(id)
       .then((oneArticle)=>{
