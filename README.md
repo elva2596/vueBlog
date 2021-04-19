@@ -226,3 +226,7 @@
 # 更改数据库,兼容mysql
 由于我在打开后端时,mongodb在mac上不太好使用的情况下,
 想使用mysql兼容数据库
+使用 sequelize  重构  server/api/index.js
+
+### todo
+后端数据库分页请求有问题
