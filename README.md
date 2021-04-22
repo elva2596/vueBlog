@@ -228,5 +228,4 @@
 想使用mysql兼容数据库
 使用 sequelize  重构  server/api/index.js
 
-### todo
-后端数据库分页请求有问题
+# 完成mysql的兼容
