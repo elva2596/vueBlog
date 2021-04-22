@@ -18,14 +18,14 @@ module.exports = {
     // 创建分类
     createClass: function(data) {
         return Classify.create({
-            classify: data,
+            classify: data.classify,
         })
     },
     // 删除分类
     removeClass: function(classId) {
         return Classify.destroy({
             where: {
-                _id: classId
+                id: classId
             }
         })
     },
@@ -35,7 +35,7 @@ module.exports = {
             classify: data.classify,
         }, {
             where: {
-                _id: classId,
+                id: classId,
             }
         })
     },
@@ -48,12 +48,16 @@ module.exports = {
         return Article.create(params)
     },
     // 获取所有文章
-    getAllArticles: function() {
-        return Article.findAll();
+    getAllArticles: function(page,limit) {
+        if (page&&limit) {
+            return Article.findAll({
+                limit: limit
+            })
+        } else return Article.findAll();
     },
     // 根据 classify 获取所有文章
     getArticlesByClassify: function(classify) {
-        return Article.findOne({
+        return Article.findAll({
             where: {
                 classify: classify
             }
@@ -62,7 +66,7 @@ module.exports = {
     getOneArticle: function(postId) {
         return Article.findOne({
             where: {
-                _id: postId,
+                id: postId,
             }
         })
     },
@@ -70,12 +74,12 @@ module.exports = {
     removeOneArticle: function(postId) {
         return Article.destroy({
             where: {
-                _id: postId
+                id: postId
             }
         })
     },
     // 编辑一篇文章
-    updateArticle: function(postId, data) {
+    updateArticle: function(id, data) {
         return Article.update({
             classify: data.classify,
             title: data.title,
@@ -83,7 +87,7 @@ module.exports = {
             contentToMark: data.contentToMark
         }, {
             where: {
-                _id: postId,
+                id: id,
             }
         })
     }

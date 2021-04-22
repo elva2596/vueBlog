@@ -1,5 +1,4 @@
 const { Sequelize , DataTypes } = require('sequelize');
-
 const config = require('../config/db');
 
 const db = new Sequelize(config.database, config.username, config.password, {
@@ -11,9 +10,7 @@ const db = new Sequelize(config.database, config.username, config.password, {
 
 // 用户
 const User = db.define('User', {
-    name: {
-        type: DataTypes.STRING,
-    },
+    name: DataTypes.STRING,
     password: DataTypes.STRING,
 }, {
     modelName: 'User',
@@ -23,12 +20,6 @@ const User = db.define('User', {
 // 分类
 const Classify = db.define('Classify', {
     classify: DataTypes.STRING,
-    _id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true,
-        allowNull: false,
-    }
 }, {
     modelName: 'Classify',
     freezeTableName: true,
@@ -39,17 +30,15 @@ const Article = db.define('Article', {
     classify: DataTypes.STRING,
     title: DataTypes.STRING,
     content: DataTypes.TEXT,
-    contentToMark: DataTypes.STRING,
-    _id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true,
-        allowNull: false,
-    }
+    contentToMark: DataTypes.STRING
+}, {
+    modelName: 'Article'
 })
 
-// 模型同步
-db.sync();
+// 模型同步,force: true,强制同步
+db.sync({
+    force: false,
+});
 
 
 module.exports = {

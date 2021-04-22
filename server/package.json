@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cross-env NODE_ENV=production pm2 start app.js --node-args='--harmony' --name 'server'"
+    "start": "cross-env NODE_ENV=production pm2 start app.js --node-args='--harmony' --name 'server'",
+    "dev": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",
@@ -23,7 +24,6 @@
     "express-winston": "^2.3.0",
     "jsonwebtoken": "^7.3.0",
     "marked": "^0.3.6",
-    "moment": "^2.18.1",
     "mongolass": "^2.4.5",
     "mysql2": "^2.2.5",
     "objectid-to-timestamp": "^1.3.0",
@@ -32,6 +32,7 @@
     "winston": "^2.3.1"
   },
   "devDependencies": {
-    "cross-env": "^3.1.3"
+    "cross-env": "^3.1.3",
+    "nodemon": "^2.0.7"
   }
 }

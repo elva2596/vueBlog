@@ -35,7 +35,7 @@ app.get('/',async (req, res) => {
 
 routes(app);
 app.set('port', process.env.PORT || 3009);
-app.listen(app.get('port'), function() {
+app.listen(app.get('port'), '127.0.0.1' , function() {
   console.log('Express server listening on port ' + app.get('port'));
 });
 

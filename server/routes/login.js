@@ -7,6 +7,7 @@ var sha1 = require('sha1');
 router.post('/login',function (req,res,next){
   var name= req.body.account;
   var password = sha1(req.body.checkPass);
+  console.log(name, password);
   api.getUserByName(req.body.account)
             .then(function(user){
               if(user&&(password==user.password)){

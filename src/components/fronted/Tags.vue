@@ -2,25 +2,25 @@
   <div class="tags_wrap"  v-loading="loading2"  element-loading-text="加载中">
     <ul class="tags_list">
       <li v-for='(item,index) in items'>
-        <a class="tag_btn" :to="`/tags/${item._id}`" @click.prevent="gets(index,item.classify)" :class="{'active':index==selected}">{{item.classify}}</a>
+        <a class="tag_btn" :to="`/tags/${item.id}`" @click.prevent="gets(index,item.classify)" :class="{'active':index==selected}">{{item.classify}}</a>
       </li>
     </ul>
     <transition-group name="list" tag="div" >
       
-      <article v-for='item in articleLists' v-if='show' :key="item._id" >
+      <article v-for='item in articleLists' v-if='show' :key="item.id" >
         <header>
           <div>
-            <router-link :to="{path:`/article/${item._id}`}" class="tags_title" >
+            <router-link :to="{path:`/article/${item.id}`}" class="tags_title" >
             {{item.title}}
           </router-link>
         </div>
         <div>
-          <p class="tags_creatAt">{{item.created_at}}</p>
+          <p class="tags_creatAt">{{item.createdAt}}</p>
         </div>
       </header>
       <section v-html="item.contentToMark" class="tags_main" ></section>
       <footer>
-          <router-link class="tags_readMore" :to="{path:`/article/${item._id}`}">阅读全文>></router-link>
+          <router-link class="tags_readMore" :to="{path:`/article/${item.id}`}">阅读全文>></router-link>
       </footer>
     </article>
     

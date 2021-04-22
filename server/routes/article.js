@@ -1,19 +1,16 @@
 var express =require('express');
 var router = express.Router();
 var api = require('../api');
+const moment = require('moment');
 var checkToken = require('../middleware/checkToken');
 // 创建一篇文章
 router.post('/article/create',checkToken,function (req,res,next){
   api.createArticle(req.body)
-      .then(({result:{ok,n}})=>{
-        if(ok&&n>0){
-          res.send({
-            code:200,
-            message:'发布成功'
-          })
-        }else{
-          throw new Error("发布失败");
-        }
+      .then(()=>{
+        res.send({
+          code:200,
+          message:'发布成功'
+        })
       })
       .catch(err=>{
         res.send({
@@ -27,12 +24,12 @@ router.post('/article/lists',checkToken,function (req,res,next){
   let {page,limit}  =req.body
   api.getAllArticles(page,limit)
       .then((result)=>{
-        var articleLists = result[0],
-            total = result[1];
+        var articleLists = result,
+            total = result.length;
          articleLists.forEach((article=>{
             // delete article._id
-            delete article.content
-            delete article.contentToMark
+            delete article.dataValues.content
+            delete article.dataValues.contentToMark
        }))
         res.send({
           code:200,
@@ -75,14 +72,14 @@ router.post('/article/articleLists',function (req,res,next){
   let {page,limit}  =req.body
   api.getAllArticles(page,limit)
       .then((result)=>{
-        var articleLists = result[0],
-            total = result[1],
+        var articleLists = result,
+            total = result.length,
             totalPage =Math.ceil(total/limit),
             hasNext=totalPage>page?1:0,
             hasPrev=page>1
        articleLists.forEach((article=>{
-            delete article.content
-            article.contentToMark = article.contentToMark.match(/<p>([\s\S]*?)<\/p>/g)[0]
+            delete article.dataValues.content
+            article.dataValues.contentToMark = article.dataValues.contentToMark.match(/<p>([\s\S]*?)<\/p>/g)[0]
        }))
       
         res.send({
@@ -144,15 +141,11 @@ router.post('/article/noAuth',function (req,res,next){
 // 删除一篇文章
 router.post('/article/remove',checkToken,function (req,res,next){
   api.removeOneArticle(req.body.id)
-      .then(({result:{ok,n}})=>{
-        if(ok&&n>0){
-          res.send({
-            code:200,
-            message:'删除成功'
-          })
-        }else{
-          throw new Error('该文章不存在');
-        }
+      .then(()=>{
+        res.send({
+          code:200,
+          message:'删除成功'
+        })
       })
       .catch(err=>{
         res.send({
@@ -163,22 +156,17 @@ router.post('/article/remove',checkToken,function (req,res,next){
 }),
 // 编辑文章
 router.post('/article/edit',checkToken,function (req,res,next){
-console.log(req.body);
   var id = req.body.id;
   var classify = req.body.classify
   var title = req.body.title
   var content = req.body.content
   var contentToMark = req.body.contentToMark
   api.updateArticle(id,{classify,title,content,contentToMark})
-  .then(({result:{ok,n}})=>{
-    if(ok&&n>0){
+  .then(()=>{
       res.send({
         code:200,
         message:'编辑成功'
       })
-    }else {
-      throw new Error('编辑失败');
-    }
   })
   .catch(err=>{
     res.send({
