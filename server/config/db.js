@@ -1,7 +1,7 @@
 module.exports = {
     database: 'blog',
     username: 'root',
-    password: '!Zs13677971568',
+    password: '123456',
     host: 'localhost',
     pool: {
         max: 5,

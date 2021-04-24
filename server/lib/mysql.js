@@ -30,14 +30,14 @@ const Article = db.define('Article', {
     classify: DataTypes.STRING,
     title: DataTypes.STRING,
     content: DataTypes.TEXT,
-    contentToMark: DataTypes.STRING
+    contentToMark: DataTypes.TEXT
 }, {
     modelName: 'Article'
 })
 
 // 模型同步,force: true,强制同步
 db.sync({
-    force: false,
+    force: true,
 });
 
 
