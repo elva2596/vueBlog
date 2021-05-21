@@ -92,7 +92,6 @@ export default {
                   this.load = true;
                     // 换成真实API的时候可以直接提交this.article
                     this.btnText = "更新中"
-
                     api.editArticle({
                       contentToMark:this.markedToHtml,
                       ...this.article
@@ -130,9 +129,9 @@ export default {
         NProgress.done();
         this.listLoading  =false
         api.getOneArticle({id:this.$route.params.postId})
-          .then(({data:{code,oneArticle:{_id,classify,title,content}}})=>{
+          .then(({data:{code,oneArticle:{id,classify,title,content}}})=>{
             if(code==200){
-              this.article.id = _id
+              this.article.id = id
               this.article.classify = classify
               this.article.title = title
               this.article.content = content
@@ -163,7 +162,8 @@ export default {
     }
   },
   mounted(){
-    this.initial()
+    this.initial();
+    console.log(this.article);
   }
 }
 </script>

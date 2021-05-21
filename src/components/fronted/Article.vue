@@ -3,7 +3,7 @@
     <header>
       <div class="home_title">{{oneArticle.title}}</div>
     <div>
-      <p class="home_creatAt">{{oneArticle.created_at}}</p>
+      <p class="home_creatAt">{{oneArticle.createdAt}}</p>
     </div>
   </header>
   <section v-html="oneArticle.contentToMark" class="home_main"></section>

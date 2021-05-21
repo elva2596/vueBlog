@@ -3,17 +3,17 @@
         <article v-for='item in items'>
           <header>
             <div>
-              <router-link :to="{path:`/article/${item._id}`}" class="home_title">
+              <router-link :to="{path:`/article/${item.id}`}" class="home_title">
               {{item.title}}
             </router-link>
           </div>
           <div>
-            <p class="home_creatAt" >{{item.created_at}}</p>
+            <p class="home_creatAt" >{{item.createdAt}}</p>
           </div>
         </header>
         <section v-html="item.contentToMark" class="home_main"></section>
         <footer>
-            <router-link class="home_readMore" :to="{path:`/article/${item._id}`}">阅读全文>></router-link>
+            <router-link class="home_readMore" :to="{path:`/article/${item.id}`}">阅读全文>></router-link>
         </footer>
       </article>
       <footer class='loadMore' v-if='loadMoreShow'><el-button type="primary" :loading="loadMoreFlag" @click='loadMore'>{{loadMoreText}}</el-button></footer>
@@ -54,7 +54,7 @@ export default {
                 .then(({data:{code,articleLists,hasNext,hasPrev}})=>{
                   if(code==200){
                     setTimeout(()=>{
-                      this.items = this.items.concat(articleLists)
+                      this.items = this.items.concat(articleLists);
                       this.loading2=false;
                       if(hasNext){
                         this.loadMoreShow = true

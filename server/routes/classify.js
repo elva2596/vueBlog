@@ -5,15 +5,11 @@ var checkToken = require('../middleware/checkToken');
 // 创建分类
 router.post('/classify/create',checkToken,function (req,res,next){
   api.createClass(req.body)
-      .then(({result:{ok,n}})=>{
-        if(ok&&n>1){
-          res.send({
-            code:200,
-            message:'创建成功'
-          })
-        }else{
-          throw new Error('创建失败');
-        }
+      .then(()=>{
+        res.send({
+          code:200,
+          message:'创建成功'
+        })
       })
       .catch(err=>{
         res.send({
@@ -25,18 +21,13 @@ router.post('/classify/create',checkToken,function (req,res,next){
 // 删除分类
 router.post('/classify/remove',checkToken,function (req,res,next){
   api.removeClass(req.body.id)
-  .then(({result:{ok,n}})=>{
+  .then(()=>{
     // 使用es6解构
-    if(ok&&n>0){
       // 已经删除了数据库中存在的项
-      res.send({
-        code:200,
-        message:'删除成功'
-      })
-    }else{
-      // 删除不存在的项
-    throw new Error('该分类不存在')
-    }
+    res.send({
+      code:200,
+      message:'删除成功'
+    })
   })
   .catch(err=>{
     res.send({

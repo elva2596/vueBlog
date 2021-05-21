@@ -17,7 +17,7 @@
                 <template scope='scope'>
                   <!--这里点击查看进入具体页面但是路径中必须带有admin,这时具体页面里会出现评论的删除选项  -->
                   <el-button size="small" type='primary' @click="editClass(scope.row)">编辑</el-button>
-                  <el-button size="small" type='danger' @click="remove(scope.row._id)">删除</el-button>
+                  <el-button size="small" type='danger' @click="remove(scope.row.id)">删除</el-button>
                 </template>
               </el-table-column>
             </el-table>
@@ -133,7 +133,7 @@ export default {
         this.formVisible=true;
         this.formTitle = '编辑';
         this.classifyInf.classify = row.classify
-        this.classifyInf.id = row._id
+        this.classifyInf.id = row.id
       },
       editSubmit(){
         this.$refs.classifyInf.validate(valid=>{
