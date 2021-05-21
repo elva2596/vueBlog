@@ -235,3 +235,6 @@
 
 根本解决方法是从后端解决 createAt 字段的格式化。
 不再使用 seqeulize 自带的自动生成。
+
+ 初始化Sequelize的时候传入dialectOptions参数
+ 完成时间格式化
