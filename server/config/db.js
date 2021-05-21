@@ -10,5 +10,10 @@ module.exports = {
     dialect: 'mysql',
     define: {
         timestamps: true,
-    }
+    },
+    dialectOptions: {
+        dateStrings: true,
+        typeCast: true
+    },
+    timezone: '+08:00' // 标准时区
 }

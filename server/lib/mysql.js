@@ -6,6 +6,8 @@ const db = new Sequelize(config.database, config.username, config.password, {
     pool: config.pool,
     dialect: config.dialect,
     define: config.define,
+    dialectOptions: config.dialectOptions,
+    timezone: config.timezone,
 });
 
 // 用户

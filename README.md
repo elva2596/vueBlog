@@ -229,3 +229,9 @@
 使用 sequelize  重构  server/api/index.js
 
 # 完成mysql的兼容
+
+# home页面
+时间格式化
+
+根本解决方法是从后端解决 createAt 字段的格式化。
+不再使用 seqeulize 自带的自动生成。
